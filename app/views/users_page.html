@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User page</title>
+  <link rel="stylesheet" href="/static/css/demo.css" type="text/css">
+  <link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css">
+    <style type="text/css">
+.right_nav{
+  margin-left: 920px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">Test App</li>
+        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="/viewedit/{{session['id']}}">Profile</a></li>
+        <li class="nav-item"><a class="right_nav" href="/">Log off</a></li>
+      </ul>
+    </nav>
+<div id="container">
+<h1>All Users</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>email</th>
+      <th>created_at</th>
+      <th>user_level</th>
+    </tr>
+  </thead>
+   <tbody>
+    {% for user in all_users %}
+    <tr>
+      <td>{{user['user_id']}}</td>
+      <td><a href="/users/show/{{user['user_id']}}">{{user['name']}}</a></td>
+      <td>{{user['email']}}</td>
+      <td>{{user['created_at']}}</td>
+      <td>{{user['user_level']}}</td>
+    {% endfor %}
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

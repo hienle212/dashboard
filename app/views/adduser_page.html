@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/signin.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/demo.css" type="text/css">
+    <style type="text/css">
+.right_nav{
+  margin-left: 920px;
+}
+button{
+  color:black;
+}
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">Test App</li>
+        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="right_nav" href="/">Log off</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+        <button class="btn btn-block"><a href="/dashboard">Return to Dashboard</a></button>
+        <h2 class="form-signin-heading">Add a new user</h2>
+    <form class="form-signin" action="/create" method='POST'>
+        <label for="inputEmail" class="sr-only">Email Address</label>
+        <input type="email" id="inputEmail" name='email' class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputEmail" class="sr-only">First Name</label>
+        <input type="text" id="first_name" name='first_name' class="form-control" placeholder="First Name" required autofocus>
+        <label for="inputEmail" class="sr-only">Last Name</label>
+        <input type="text" id="last_name" name='last_name' class="form-control" placeholder="Last Name" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name='password' class="form-control" placeholder="Password" required>
+        <label for="inputPassword" class="sr-only">Password Confirmation</label>
+        <input type="password" id="confirm_password" class="form-control" name='confirm_password' placeholder="Confirm Password" required>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value='create'>
+    </form>
+
+    </div> 
+  </body>
+</html>
